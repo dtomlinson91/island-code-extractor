@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "island-code-extractor"
+version = "0.1.0"
+description = ""
+authors = ["Daniel Tomlinson <dtomlinson@panaetius.co.uk>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+prospector = "^1.3.0"
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
