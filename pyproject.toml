@@ -6,6 +6,9 @@ authors = ["Daniel Tomlinson <dtomlinson@panaetius.co.uk>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
+panaetius = "^1.0.2"
+praw = "^7.1.0"
+pendulum = "^2.1.2"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
