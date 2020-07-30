@@ -1,3 +1,7 @@
 {
-    "python.pythonPath": "/Users/dtomlinson/.virtualenvs/island-code-extractor/bin/python"
+  "python.pythonPath": "/Users/dtomlinson/.virtualenvs/island-code-extractor/bin/python",
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}/src"
+  },
+
 }
