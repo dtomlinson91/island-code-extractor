@@ -2,3 +2,30 @@ Documentation:
     ☐ Document using vscode with a python src folder.
         ☐ Using debugger instead of runner.
         ☐ Setting the env and pythonpath (both must be explicit).
+        ☐ Must set the .env file and the launcher.config (with both setup as above.)
+
+Comprehension:
+    ☐ Document creating dict objects using the comprehension (in process.py).
+
+Docstrings:
+    ☐ Configure & document python docstrings addon.
+    ☐ Agree on a standard.
+
+VSCode:
+    ☐ Install project with pip, see if it handles doc references any differently to using the src method.
+
+Warlus:
+    ☐ Document a use for the warlus operator <https://stackoverflow.com/questions/1327369/extract-part-of-a-regex-match> (in if block - it saves a line and makes it cleaner.)
+
+Comments:
+    ✔ Control depth @done (05/08/2020, 01:16:32)
+    ✔ Control how many to pull back (limit?) @done (05/08/2020, 01:16:33)
+
+Time:
+    ✔ Should checktime relative to now @done (03/08/2020, 00:17:24)
+    ✔ Should checktime relative to start of thread (give all comments within 1 day of thread posted.) @done (05/08/2020, 01:16:35)
+
+Panaetius:
+    ☐ Write in overwriting the __header__
+        Should be able to set the __header__ directly when you import panaetius in your module. This will allow you to use panaetius hardcoded in a module without the user having to set a __header__. They should only need to set this file if they want to use it themselves.
+    ☐ Make sure the panaetius import is named something else: import panaetius as panaetius_reddit
