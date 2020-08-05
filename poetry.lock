@@ -461,6 +461,17 @@ astroid = ">=1.4"
 
 [[package]]
 category = "dev"
+description = "a python refactoring library..."
+name = "rope"
+optional = false
+python-versions = "*"
+version = "0.17.0"
+
+[package.extras]
+dev = ["pytest"]
+
+[[package]]
+category = "dev"
 description = "A module for retrieving program settings from various sources in a consistant method."
 name = "setoptconf"
 optional = false
@@ -546,7 +557,7 @@ python-versions = "*"
 version = "1.12.1"
 
 [metadata]
-content-hash = "1a71cda8bc1eb4b3e9da31ea7d16220ebf538d15b40a2436375451e4fb411777"
+content-hash = "92e706ba2e764da1c95a358fa3c9c69cec0cd598bde4338865efce370b29daa7"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -748,6 +759,9 @@ requests = [
 ]
 requirements-detector = [
     {file = "requirements-detector-0.7.tar.gz", hash = "sha256:0d1e13e61ed243f9c3c86e6cbb19980bcb3a0e0619cde2ec1f3af70fdbee6f7b"},
+]
+rope = [
+    {file = "rope-0.17.0.tar.gz", hash = "sha256:658ad6705f43dcf3d6df379da9486529cf30e02d9ea14c5682aa80eb33b649e1"},
 ]
 setoptconf = [
     {file = "setoptconf-0.2.0.tar.gz", hash = "sha256:5b0b5d8e0077713f5d5152d4f63be6f048d9a1bb66be15d089a11c898c3cf49c"},
