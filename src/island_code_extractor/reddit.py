@@ -6,8 +6,8 @@ import pendulum
 import praw
 from praw.models import Submission, Comment, MoreComments
 
-from island_code_extractor import panaetius
-from island_code_extractor import CONFIG
+from . import panaetius
+from . import CONFIG
 
 
 top_level_comments = []
@@ -107,3 +107,4 @@ def _check_time(
         current_time = pendulum.from_timestamp(relative)
     comment_time = pendulum.from_timestamp(comment.created_utc)
     return current_time.diff(comment_time).in_seconds() <= delta
+
