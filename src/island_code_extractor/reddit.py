@@ -7,6 +7,7 @@ import praw
 from praw.models import Submission, Comment, MoreComments
 
 from island_code_extractor import panaetius
+from island_code_extractor import CONFIG
 
 
 top_level_comments = []
@@ -14,9 +15,9 @@ top_level_comments = []
 
 def get_reddit_instance() -> praw.Reddit:
     return praw.Reddit(
-        client_id=panaetius.CONFIG.reddit_id,
-        client_secret=panaetius.CONFIG.reddit_secret,
-        user_agent=panaetius.CONFIG.reddit_user_agent,
+        client_id=CONFIG.reddit_id,
+        client_secret=CONFIG.reddit_secret,
+        user_agent=CONFIG.reddit_user_agent,
     )
 
 
@@ -46,10 +47,10 @@ def get_top_level_comments(
 ) -> List[Comment]:
 
     if delta < -1:
-        panaetius.logger.error(f"Negative time delta {delta}.")
+        logger.error(f"Negative time delta {delta}.")
         sys.exit(1)
     # total_comments = []
-    submission = reddit_instance.submission(id=panaetius.CONFIG.reddit_thread_id)
+    submission = reddit_instance.submission(id=CONFIG.reddit_thread_id)
     submission.comment_sort = sort
     get_more_comments(
         submission.comments.list(),
@@ -58,13 +59,13 @@ def get_top_level_comments(
         relative=relative,
         sort=sort,
     )
-    # total_comments = [
-    #     i
-    #     for i in top_level_comments
-    #     if ((_check_time(i, delta=delta) or delta != -1) and not i.stickied)
-    # ]
-    return None
-    # return total_comments
+    total_comments = [
+        i
+        for i in top_level_comments
+        if ((_check_time(i, delta=delta) or delta != -1) and not i.stickied)
+    ]
+    # return None
+    return total_comments
 
 
 def get_more_comments(
@@ -97,7 +98,7 @@ def get_more_comments(
 def _check_time(
     comment: Comment, delta: int, relative: Union[int, float, str] = "now"
 ) -> bool:
-
+    # delta =-1 functionality needs adding
     if relative == "now":
         current_time = pendulum.now("Europe/London")
     elif relative == "submission":

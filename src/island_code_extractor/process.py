@@ -13,7 +13,10 @@ def _extract_body(comment_instance: Comment) -> str:
 
 
 def _extract_user(comment_instance: Comment) -> str:
-    return comment_instance.author.name
+    try:
+        return comment_instance.author.name
+    except AttributeError:
+        return "deleted"
 
 
 def _extract_permalink(comment_instance: Comment) -> str:
@@ -52,9 +55,9 @@ def get_comment_data(praw_comments: List[Comment]) -> List[Dict]:
                 ("body", _extract_body(comment)),
                 ("user", _extract_user(comment)),
                 ("permalink", _extract_permalink(comment)),
-                ("dream_code", _extract_dream_code(comment)),
+                # ("dream_code", _extract_dream_code(comment)),
             ]
         )
         for comment in praw_comments
-        if _extract_dream_code(comment) is not False
+        # if _extract_dream_code(comment) is not False
     ]
