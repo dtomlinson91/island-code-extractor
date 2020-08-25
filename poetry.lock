@@ -191,7 +191,7 @@ develop = true
 name = "panaetius"
 optional = false
 python-versions = "^3.7"
-version = "1.0.2"
+version = "1.1"
 
 [package.dependencies]
 pylite = "^0.1.0"
